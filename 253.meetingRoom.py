@@ -7,4 +7,12 @@ def mR1(self, intervals):
 			else:
 				return False
 	return True
-	
+
+
+#better solution
+def mR2(self, intervals):
+	intervals.sort(key = lambda x : x.start)
+	for i, k in enumerate(intervals, 1):
+		if k.start < intervals[i - 1]:
+			return False
+	return True
